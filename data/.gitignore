@@ -7,5 +7,5 @@ captured_data/**
 # raw_data/**
 # !raw_data/.gitkeep
 
-train_data/**
-!train_data/.gitkeep
+# train_data/**
+# !train_data/.gitkeep
