@@ -113,10 +113,10 @@ class PredictorApi:
         def set_predictor(model_name):
             if model_name == "model1" and self.predictor1 == None:
                 # /mlops_project/model_config
-                config_path = ("./mlops_project/model_config/model-1.yaml").as_posix()
+                config_path = ("/mlops_project/model_config/model-1.yaml")
                 self.predictor1 = ModelPredictor(config_path)
             if model_name == "model2" and self.predictor2 == None:
-                config_path = "./mlops_project/model_config/model-2.yaml"
+                config_path = "/mlops_project/model_config/model-2.yaml"
                 self.predictor2 = ModelPredictor(config_path)
 
         def run_predict(predictor,data: Data, request: Request):
