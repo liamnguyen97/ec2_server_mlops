@@ -1,10 +1,10 @@
 version: '3.7'
 services:
   model_predictor:
-    # image:  ${IMAGE_NAME}
+    image:  ${IMAGE_NAME}
     # restart: on-failure
-    build: 
-      context: .
+    # build: 
+    #   context: .
     volumes:
       - ./model_config:/mlops_project/model_config
       - ./src:/mlops_project/src
