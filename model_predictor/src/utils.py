@@ -6,7 +6,7 @@ logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.INFO)
 
 
 class AppPath:
-    ROOT_DIR = Path("../")
+    ROOT_DIR = Path("/mlops_project")
     DATA_DIR = ROOT_DIR / "data"
     # store raw data
     RAW_DATA_DIR = DATA_DIR / "raw_data"
