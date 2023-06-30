@@ -1,0 +1,49 @@
+{
+  "id": "789",
+  "rows": [
+    [
+      "V3",
+      33.142627,
+      "V3",
+      "V3",
+      10138.630659,
+      "V1",
+      "V4",
+      2.0,
+      "V2",
+      "V0",
+      3.0,
+      "V1",
+      41.501639,
+      "stores",
+      "V0",
+      1.0,
+      "V2",
+      1.0,
+      "none",
+      "no"
+    ]
+  ],
+  "columns": [
+    "feature1",
+    "feature2",
+    "feature3",
+    "feature4",
+    "feature5",
+    "feature6",
+    "feature7",
+    "feature8",
+    "feature9",
+    "feature10",
+    "feature11",
+    "feature12",
+    "feature13",
+    "feature14",
+    "feature15",
+    "feature16",
+    "feature17",
+    "feature18",
+    "feature19",
+    "feature20"
+  ]
+}

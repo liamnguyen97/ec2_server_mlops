@@ -8,6 +8,7 @@ services:
     volumes:
       - ./model_config:/mlops_project/model_config
       - ./src:/mlops_project/src
+      - ../../data:/mlops_project/data
     ports:
       - ${PORT}:8000
     # Docker containers communicate with services running on the host machine using the special host name host.docker.internal.
