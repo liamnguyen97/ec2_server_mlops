@@ -10,10 +10,10 @@ set PORT="5040"
 
 
 run_predictor() {
-    docker build -f ec2_server/model_predictor/Dockerfile -t  "model_predictor_2" .
+    docker build -f ./model_predictor/Dockerfile -t  "model_predictor_2" .
     IMAGE_NAME=$IMAGE_NAME PORT=$port
     # PORT=$port
-    docker-compose -f ec2_server/model_predictor/docker-compose.yml up -d
+    docker-compose -f ./model_predictor/docker-compose.yml up -d
 }
 
 case $cmd in
