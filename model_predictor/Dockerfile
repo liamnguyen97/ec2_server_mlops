@@ -10,7 +10,7 @@ RUN python -m venv /opt/venv
 # the python command in the Dockerfile and any scripts that you run in the container will use the Python interpreter installed in the virtual environment
 ENV PATH="/opt/venv/bin:$PATH"
 
-COPY ./model_predictor/requirements.txt .
+COPY ./requirements.txt .
 RUN pip install --upgrade wheel setuptools pip
 RUN pip install -r requirements.txt
 
