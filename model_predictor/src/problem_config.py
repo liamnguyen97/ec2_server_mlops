@@ -52,23 +52,22 @@ def create_prob_config(phase_id: str, prob_id: str) -> ProblemConfig:
     prob_config.test_size = 0.2
     prob_config.random_state = 123
 
-    # construct data paths for original data
-    prob_config.raw_data_path = (
-        AppPath.RAW_DATA_DIR / f"{phase_id}" / f"{prob_id}" / "raw_train.parquet"
-    )
+    # # construct data paths for original data
+    # prob_config.raw_data_path = (
+    #     AppPath.RAW_DATA_DIR / f"{phase_id}" / f"{prob_id}" / "raw_train.parquet"
+    # )
     prob_config.feature_config_path = (
-        AppPath.RAW_DATA_DIR / f"{phase_id}" / f"{prob_id}" / "features_config.json"
+        AppPath.DATA_DIR / f"{phase_id}" / f"{prob_id}" / "features_config.json"
     )
-    prob_config.train_data_path = AppPath.TRAIN_DATA_DIR / f"{phase_id}" / f"{prob_id}"
-    prob_config.train_data_path.mkdir(parents=True, exist_ok=True)
+    # prob_config.train_data_path = AppPath.TRAIN_DATA_DIR / f"{phase_id}" / f"{prob_id}"
+    # prob_config.train_data_path.mkdir(parents=True, exist_ok=True)
 
-    prob_config.category_index_path = (
-        prob_config.train_data_path / "category_index.pickle"
-    )
-    prob_config.train_x_path = prob_config.train_data_path / "train_x.parquet"
-    prob_config.train_y_path = prob_config.train_data_path / "train_y.parquet"
-    prob_config.test_x_path = prob_config.train_data_path / "test_x.parquet"
-    prob_config.test_y_path = prob_config.train_data_path / "test_y.parquet"
+    prob_config.category_index_path = AppPath.DATA_DIR / f"{phase_id}" / f"{prob_id}" / "category_index.pickle"
+    
+    # prob_config.train_x_path = prob_config.train_data_path / "train_x.parquet"
+    # prob_config.train_y_path = prob_config.train_data_path / "train_y.parquet"
+    # prob_config.test_x_path = prob_config.train_data_path / "test_x.parquet"
+    # prob_config.test_y_path = prob_config.train_data_path / "test_y.parquet"
 
     # get properties of ml-problem
     feature_configs = load_feature_configs_dict(prob_config.feature_config_path)
@@ -77,21 +76,21 @@ def create_prob_config(phase_id: str, prob_id: str) -> ProblemConfig:
     prob_config.numerical_cols = feature_configs.get("numeric_columns")
     prob_config.ml_type = feature_configs.get("ml_type")
 
-    # construct data paths for API-captured data
-    prob_config.captured_data_dir = (
-        AppPath.CAPTURED_DATA_DIR / f"{phase_id}" / f"{prob_id}"
-    )
-    prob_config.captured_data_dir.mkdir(parents=True, exist_ok=True)
-    prob_config.processed_captured_data_dir = (
-        prob_config.captured_data_dir / "processed"
-    )
-    prob_config.processed_captured_data_dir.mkdir(parents=True, exist_ok=True)
-    prob_config.captured_x_path = (
-        prob_config.processed_captured_data_dir / "captured_x.parquet"
-    )
-    prob_config.uncertain_y_path = (
-        prob_config.processed_captured_data_dir / "uncertain_y.parquet"
-    )
+    # # construct data paths for API-captured data
+    # prob_config.captured_data_dir = (
+    #     AppPath.CAPTURED_DATA_DIR / f"{phase_id}" / f"{prob_id}"
+    # )
+    # prob_config.captured_data_dir.mkdir(parents=True, exist_ok=True)
+    # prob_config.processed_captured_data_dir = (
+    #     prob_config.captured_data_dir / "processed"
+    # )
+    # prob_config.processed_captured_data_dir.mkdir(parents=True, exist_ok=True)
+    # prob_config.captured_x_path = (
+    #     prob_config.processed_captured_data_dir / "captured_x.parquet"
+    # )
+    # prob_config.uncertain_y_path = (
+    #     prob_config.processed_captured_data_dir / "uncertain_y.parquet"
+    # )
 
     return prob_config
 

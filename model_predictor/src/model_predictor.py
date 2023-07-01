@@ -63,10 +63,10 @@ class ModelPredictor:
             categorical_cols=self.prob_config.categorical_cols,
             category_index=self.category_index,
         )
-        # save request data for improving models
-        ModelPredictor.save_request_data(
-            feature_df, self.prob_config.captured_data_dir, data.id
-        )
+        # # save request data for improving models
+        # ModelPredictor.save_request_data(
+        #     feature_df, self.prob_config.captured_data_dir, data.id
+        # )
 
         prediction = self.model.predict(feature_df)
         is_drifted = self.detect_drift(feature_df)
