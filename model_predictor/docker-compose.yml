@@ -17,4 +17,4 @@ services:
     extra_hosts:
       - "host.docker.internal:host-gateway"
 
-    entrypoint: /bin/sh -c "python /src/model_predictor.py"
+    entrypoint: /bin/sh -c "python /mlops_project/src/model_predictor.py"
